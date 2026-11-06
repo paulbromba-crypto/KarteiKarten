@@ -5,9 +5,13 @@ import XCTest
 @MainActor
 final class DeckTransferTests: XCTestCase {
 
+    /// Container festhalten, damit er während des Tests nicht freigegeben wird.
+    private var container: ModelContainer?
+
     private func makeContext() throws -> ModelContext {
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Deck.self, Card.self, configurations: configuration)
+        self.container = container
         return ModelContext(container)
     }
 

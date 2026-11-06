@@ -10,8 +10,8 @@ final class StudySession {
     private let engine: LearningEngine
     private let context: ModelContext
 
-    private(set) var currentCard: Card?
-    private(set) var learningPhase: Int?
+    private(set) var currentCard: Card? = nil
+    private(set) var learningPhase: Int? = nil
     private(set) var groupCount = 0
     private(set) var canUndo = false
     private(set) var statistics: DeckStatistics
@@ -19,7 +19,7 @@ final class StudySession {
     private(set) var revision = 0
 
     /// Gezielt nur eine Phase lernen (`nil` = niedrigste offene Phase).
-    private(set) var phaseFilter: Int?
+    private(set) var phaseFilter: Int? = nil
 
     func setPhaseFilter(_ phase: Int?) {
         engine.phaseFilter = phase

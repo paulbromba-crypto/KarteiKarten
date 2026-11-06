@@ -1,0 +1,107 @@
+{
+  "format": "karteikarten-stapel",
+  "version": 1,
+  "name": "BWL/VWL Grundbegriffe",
+  "karten": [
+    {
+      "frage": "Ökonomisches Prinzip (Minimal- und Maximalprinzip)",
+      "antwort": "Grundsatz des wirtschaftlichen Handelns: Weil Mittel knapp sind, soll ein möglichst günstiges Verhältnis von Einsatz (Input) und Ergebnis (Output) erreicht werden.\n• Minimalprinzip: Ein festgelegtes Ziel mit möglichst geringem Mitteleinsatz erreichen.\n• Maximalprinzip: Mit festgelegten Mitteln ein möglichst großes Ergebnis erzielen.",
+      "praxisbeispiel": "Minimalprinzip: Ein Unternehmen muss 500 Laptops beschaffen und sucht den günstigsten Lieferanten. Maximalprinzip: Mit einem Werbebudget von 10.000 € sollen möglichst viele Neukunden gewonnen werden.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Opportunitätskosten",
+      "antwort": "Entgangener Nutzen bzw. Ertrag der besten nicht gewählten Alternative. Sie entstehen, weil knappe Ressourcen (Zeit, Geld, Kapazität) nur einmal eingesetzt werden können.",
+      "praxisbeispiel": "Eine Studentin arbeitet am Samstag nicht im Café (80 € Lohn), sondern lernt für eine Klausur. Die Opportunitätskosten des Lernens betragen 80 €.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Angebot und Nachfrage",
+      "antwort": "Nachfrage: Menge eines Gutes, die Käufer zu einem bestimmten Preis kaufen wollen – sie sinkt in der Regel mit steigendem Preis.\nAngebot: Menge, die Verkäufer zu einem bestimmten Preis anbieten wollen – sie steigt in der Regel mit steigendem Preis.\nDas Zusammenspiel beider bestimmt auf dem Markt Preis und Menge.",
+      "praxisbeispiel": "Steigen die Erdbeerpreise im Winter, kaufen weniger Kunden Erdbeeren (Nachfrage sinkt), während sich der Import für Händler mehr lohnt (Angebot steigt).",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Marktgleichgewicht",
+      "antwort": "Zustand, in dem angebotene und nachgefragte Menge übereinstimmen. Der zugehörige Preis heißt Gleichgewichtspreis; zu diesem Preis wird der Markt geräumt – es gibt weder Angebotsüberschuss noch Nachfrageüberhang.",
+      "praxisbeispiel": "Ein Konzertveranstalter verlangt 30 € pro Ticket; genau alle 2.000 Plätze werden verkauft und niemand geht leer aus. Bei 60 € blieben Plätze frei (Angebotsüberschuss), bei 10 € wären die Tickets sofort vergriffen (Nachfrageüberhang).",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Preiselastizität der Nachfrage",
+      "antwort": "Maß dafür, wie stark die nachgefragte Menge auf eine Preisänderung reagiert:\nElastizität = prozentuale Mengenänderung ÷ prozentuale Preisänderung.\n• Betrag > 1: elastische Nachfrage (Menge reagiert stark)\n• Betrag < 1: unelastische Nachfrage (Menge reagiert schwach)",
+      "praxisbeispiel": "Die Nachfrage nach Benzin ist kurzfristig unelastisch: Auch bei steigenden Preisen müssen viele Pendler weiter tanken. Die Nachfrage nach einer bestimmten Schokoladenmarke ist elastisch, weil Kunden leicht auf andere Marken ausweichen.",
+      "fallbeispiel": "Ein Kino senkt den Eintrittspreis von 10 € auf 8 €. Die Besucherzahl pro Woche steigt dadurch von 1.000 auf 1.300.\nAufgabe: Berechne die Preiselastizität der Nachfrage. Ist die Nachfrage elastisch oder unelastisch? Wie verändert sich der Umsatz?",
+      "loesung": "Preisänderung: (8 − 10) ÷ 10 = −20 %\nMengenänderung: (1.300 − 1.000) ÷ 1.000 = +30 %\nElastizität = 30 % ÷ (−20 %) = −1,5 → Betrag 1,5 > 1, also elastische Nachfrage.\nUmsatz vorher: 10 € × 1.000 = 10.000 €\nUmsatz nachher: 8 € × 1.300 = 10.400 €\n→ Der Umsatz steigt um 400 €, weil die Nachfrage elastisch ist.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Bruttoinlandsprodukt (BIP)",
+      "antwort": "Gesamtwert aller Waren und Dienstleistungen (zu Marktpreisen), die innerhalb eines Jahres im Inland als Endprodukte hergestellt werden – abzüglich der Vorleistungen. Das BIP ist der wichtigste Maßstab für die Wirtschaftsleistung eines Landes. Reales BIP = um Preissteigerungen bereinigt.",
+      "praxisbeispiel": "Baut ein japanischer Autohersteller in einem Werk in Deutschland Autos, zählt diese Produktion zum deutschen BIP. Wächst das reale BIP, spricht man von Wirtschaftswachstum.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Inflation",
+      "antwort": "Anhaltender Anstieg des allgemeinen Preisniveaus über einen längeren Zeitraum. Dadurch sinkt die Kaufkraft des Geldes: Für denselben Betrag erhält man weniger Güter. Gemessen wird sie z. B. mit dem Verbraucherpreisindex (VPI).",
+      "praxisbeispiel": "Bei einer Inflationsrate von 5 % kostet ein Warenkorb, der heute 100 € kostet, in einem Jahr etwa 105 €. Wer 1.000 € unverzinst unter dem Kopfkissen hat, kann sich danach real nur noch etwa so viel leisten wie heute mit rund 952 €.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Fixkosten und variable Kosten",
+      "antwort": "Fixkosten: Kosten, die unabhängig von der produzierten Menge anfallen (z. B. Miete, Gehälter, Versicherungen).\nVariable Kosten: Kosten, die sich mit der Produktionsmenge verändern (z. B. Material, Verpackung, Energie für die Maschinen).\nGesamtkosten = Fixkosten + variable Kosten.",
+      "praxisbeispiel": "Eine Bäckerei zahlt 2.000 € Miete pro Monat – egal wie viele Brötchen sie backt (Fixkosten). Mehl, Hefe und Tüten fallen dagegen pro Brötchen an (variable Kosten).",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Deckungsbeitrag",
+      "antwort": "Differenz zwischen Umsatzerlös und variablen Kosten. Er zeigt, wie viel ein Produkt zur Deckung der Fixkosten (und danach zum Gewinn) beiträgt.\nStückdeckungsbeitrag = Verkaufspreis − variable Stückkosten.\nGewinn = Summe aller Deckungsbeiträge − Fixkosten.",
+      "praxisbeispiel": "Ein T-Shirt wird für 20 € verkauft, Stoff und Druck kosten 8 €. Jedes verkaufte T-Shirt trägt 12 € zur Deckung der Fixkosten bei.",
+      "fallbeispiel": "Ein Café verkauft im Monat zwei Produkte:\n• Kuchen: Preis 12 €, variable Kosten 7 €, Absatz 2.000 Stück\n• Kaffee: Preis 8 €, variable Kosten 6,50 €, Absatz 3.000 Stück\nDie Fixkosten betragen 12.000 € im Monat.\nAufgabe: Berechne die Stückdeckungsbeiträge, den gesamten Deckungsbeitrag und den Gewinn.",
+      "loesung": "Stückdeckungsbeitrag Kuchen: 12 € − 7 € = 5 €\nStückdeckungsbeitrag Kaffee: 8 € − 6,50 € = 1,50 €\nDeckungsbeitrag Kuchen: 5 € × 2.000 = 10.000 €\nDeckungsbeitrag Kaffee: 1,50 € × 3.000 = 4.500 €\nGesamter Deckungsbeitrag: 14.500 €\nGewinn: 14.500 € − 12.000 € = 2.500 €",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Break-even-Point",
+      "antwort": "Gewinnschwelle: Die Absatzmenge (bzw. der Umsatz), bei der die Erlöse genau die Gesamtkosten decken – der Gewinn ist null. Darunter entsteht Verlust, darüber Gewinn.\nBreak-even-Menge = Fixkosten ÷ Stückdeckungsbeitrag.",
+      "praxisbeispiel": "Ein Food-Truck muss jeden Monat eine bestimmte Anzahl Burger verkaufen, um Standgebühr, Leasing und Personal zu decken. Erst jeder Burger darüber hinaus bringt Gewinn.",
+      "fallbeispiel": "Ein Start-up stellt Rucksäcke her. Die Fixkosten betragen 24.000 € pro Monat. Ein Rucksack wird für 40 € verkauft, die variablen Kosten liegen bei 25 € pro Stück.\nAufgabe: Berechne die Break-even-Menge und den Break-even-Umsatz. Wie hoch ist der Gewinn bei 2.000 verkauften Rucksäcken?",
+      "loesung": "Stückdeckungsbeitrag: 40 € − 25 € = 15 €\nBreak-even-Menge: 24.000 € ÷ 15 € = 1.600 Rucksäcke\nBreak-even-Umsatz: 1.600 × 40 € = 64.000 €\nGewinn bei 2.000 Stück: (2.000 − 1.600) × 15 € = 6.000 €\n(Kontrolle: 2.000 × 15 € − 24.000 € = 6.000 €)",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Liquidität",
+      "antwort": "Fähigkeit eines Unternehmens, seine fälligen Zahlungsverpflichtungen jederzeit fristgerecht zu erfüllen. Gemessen wird sie z. B. mit Liquiditätsgraden, die kurzfristig verfügbare Mittel ins Verhältnis zu kurzfristigen Verbindlichkeiten setzen.\nLiquidität 2. Grades = (flüssige Mittel + kurzfristige Forderungen) ÷ kurzfristige Verbindlichkeiten × 100 %.",
+      "praxisbeispiel": "Ein Handwerksbetrieb hat volle Auftragsbücher und ist profitabel, aber die Kunden zahlen erst nach 60 Tagen. Kann er deshalb die Löhne nicht pünktlich bezahlen, ist er illiquide – trotz Gewinn.",
+      "fallbeispiel": "Ein Unternehmen hat 20.000 € auf dem Bankkonto, 40.000 € kurzfristige Forderungen an Kunden und 50.000 € kurzfristige Verbindlichkeiten.\nAufgabe: Berechne die Liquidität 1. und 2. Grades und beurteile das Ergebnis (Faustregel: Liquidität 2. Grades ≥ 100 %).",
+      "loesung": "Liquidität 1. Grades: 20.000 € ÷ 50.000 € = 40 %\nLiquidität 2. Grades: (20.000 € + 40.000 €) ÷ 50.000 € = 120 %\nBeurteilung: Mit 120 % liegt die Liquidität 2. Grades über 100 % – wenn die Kunden pünktlich zahlen, können alle kurzfristigen Verbindlichkeiten gedeckt werden.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Rentabilität",
+      "antwort": "Verhältnis von Gewinn zum eingesetzten Kapital oder zum Umsatz – sie zeigt, wie wirtschaftlich das Kapital eingesetzt wurde (in %).\n• Eigenkapitalrentabilität = Gewinn ÷ Eigenkapital × 100\n• Gesamtkapitalrentabilität = (Gewinn + Fremdkapitalzinsen) ÷ Gesamtkapital × 100\n• Umsatzrentabilität = Gewinn ÷ Umsatz × 100",
+      "praxisbeispiel": "Ein Investor vergleicht zwei Firmen: Firma A erzielt 50.000 € Gewinn mit 1 Mio. € Eigenkapital (5 %), Firma B 40.000 € mit 200.000 € Eigenkapital (20 %). Firma B ist deutlich rentabler.",
+      "fallbeispiel": "Eine GmbH arbeitet mit 200.000 € Eigenkapital und 300.000 € Fremdkapital. Im Jahr erzielt sie 600.000 € Umsatz und 30.000 € Gewinn; an die Bank zahlt sie 15.000 € Zinsen.\nAufgabe: Berechne Eigenkapital-, Gesamtkapital- und Umsatzrentabilität.",
+      "loesung": "Eigenkapitalrentabilität: 30.000 € ÷ 200.000 € × 100 = 15 %\nGesamtkapitalrentabilität: (30.000 € + 15.000 €) ÷ 500.000 € × 100 = 9 %\nUmsatzrentabilität: 30.000 € ÷ 600.000 € × 100 = 5 %\n→ Von jedem Euro Umsatz bleiben 5 Cent Gewinn.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Produktionsfaktoren",
+      "antwort": "Güter und Leistungen, die zur Herstellung anderer Güter eingesetzt werden.\nVolkswirtschaftlich: Arbeit, Boden (inkl. Rohstoffe) und Kapital (Maschinen, Gebäude), oft ergänzt um Wissen/Bildung.\nBetriebswirtschaftlich (nach Gutenberg): ausführende Arbeit, Betriebsmittel, Werkstoffe sowie der dispositive Faktor (Leitung, Planung, Organisation).",
+      "praxisbeispiel": "In einer Schreinerei sind die Tischler (Arbeit), die Werkstatt und Maschinen (Betriebsmittel), das Holz (Werkstoffe) und die Meisterin, die Aufträge plant und verteilt (dispositiver Faktor), im Einsatz.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Grenznutzen",
+      "antwort": "Zusätzlicher Nutzen, den eine weitere konsumierte Einheit eines Gutes stiftet. Nach dem Gesetz vom abnehmenden Grenznutzen (1. Gossensches Gesetz) sinkt der Nutzen jeder zusätzlichen Einheit mit zunehmender Menge.",
+      "praxisbeispiel": "Bei großem Durst bringt das erste Glas Wasser sehr viel Nutzen, das zweite noch etwas, das fünfte kaum noch – sein Grenznutzen ist fast null. Deshalb sind Kunden für das erste Getränk oft bereit, mehr zu zahlen.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    },
+    {
+      "frage": "Bilanz (Aktiva und Passiva)",
+      "antwort": "Gegenüberstellung von Vermögen und Kapital eines Unternehmens zu einem Stichtag.\n• Aktiva (linke Seite): Mittelverwendung – Anlagevermögen und Umlaufvermögen. Zeigt, wofür das Kapital verwendet wurde.\n• Passiva (rechte Seite): Mittelherkunft – Eigenkapital und Fremdkapital. Zeigt, woher das Kapital stammt.\nDie Summe beider Seiten ist immer gleich (Bilanzsumme).",
+      "praxisbeispiel": "Kauft ein Unternehmen eine Maschine für 50.000 € mit einem Bankkredit, steigt auf der Aktivseite das Anlagevermögen um 50.000 € und auf der Passivseite das Fremdkapital um 50.000 € – die Bilanz bleibt ausgeglichen.",
+      "quelle": "Allgemeines BWL/VWL-Grundlagenwissen"
+    }
+  ]
+}

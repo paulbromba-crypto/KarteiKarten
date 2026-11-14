@@ -1,8 +1,13 @@
 # Karteikarten – Lern-App mit Phasensystem
 
-Eine native iOS-App (Swift, SwiftUI, SwiftData) zum Lernen mit Karteikarten nach einem
-Phasensystem ähnlich der Leitner-Methode. Die App läuft komplett lokal auf dem iPhone –
-ohne Server, ohne Konto, ohne Internet.
+Lern-App für Karteikarten nach einem Phasensystem ähnlich der Leitner-Methode – in zwei Varianten:
+
+- **Web-App (PWA)** im Ordner [`web/`](web/) – läuft in Safari auf dem iPhone und wird über
+  „Zum Home-Bildschirm“ wie eine App genutzt. **Kein Mac nötig.** → [Web-App](#web-app-pwa)
+- **Native iOS-App** (Swift, SwiftUI, SwiftData) – braucht zum Installieren einen Mac mit Apple-Chip und Xcode.
+
+Beide laufen komplett lokal auf dem iPhone – ohne Server, ohne Konto, ohne Internet – und
+verwenden dasselbe JSON-Format: Stapel lassen sich zwischen beiden Versionen austauschen.
 
 - Mindestversion: **iOS 17**
 - Keine externen Abhängigkeiten, keine Netzwerkzugriffe
@@ -12,12 +17,51 @@ ohne Server, ohne Konto, ohne Internet.
 
 ## Inhalt
 
+0. [Web-App (PWA)](#web-app-pwa)
 1. [Funktionen](#funktionen)
 2. [So funktioniert das Lernen](#so-funktioniert-das-lernen)
 3. [Installation auf dem eigenen iPhone](#installation-auf-dem-eigenen-iphone)
 4. [JSON-Format für Import und Export](#json-format-für-import-und-export)
 5. [Neue Stapel mit Claude erstellen](#neue-stapel-mit-claude-erstellen)
 6. [Projektaufbau](#projektaufbau)
+
+---
+
+## Web-App (PWA)
+
+Die Web-App im Ordner `web/` hat dieselben Funktionen und dieselbe Lernlogik wie die iOS-App
+(Logik getrennt von der Oberfläche in `web/js/engine.js`, 1:1 aus `LearningEngine.swift` portiert).
+
+### Auf dem iPhone installieren
+1. Die Adresse der Web-App in **Safari** öffnen (nicht in einem anderen Browser).
+2. Unten auf **Teilen** (Quadrat mit Pfeil nach oben) tippen.
+3. Nach unten scrollen → **Zum Home-Bildschirm** → **Hinzufügen**.
+4. Ab jetzt die App über das Symbol **Karteikarten** auf dem Home-Bildschirm starten – im Vollbild, ohne Safari-Leiste.
+5. Einmal mit Internet öffnen, danach funktioniert sie komplett **offline**.
+
+### Daten und Sicherung
+- Alles wird nach jeder Aktion sofort im Speicher des iPhones abgelegt (IndexedDB + localStorage).
+  Die App fragt zusätzlich nach dauerhaftem Speicher (`navigator.storage.persist()`).
+- **Wichtig:** Die Daten der Home-Bildschirm-App und der Safari-Seite sind getrennt. Nutze immer das Home-Bildschirm-Symbol.
+  Wird die App vom Home-Bildschirm gelöscht, sind auch ihre Daten weg.
+- **Sichern:** „Alle Stapel sichern“ (Startseite) oder im Stapel „…“ → *Als JSON exportieren*. Auf dem iPhone öffnet sich
+  das Teilen-Menü → **In Dateien sichern**. Wurde länger als 14 Tage nicht gesichert, erscheint ein deutlicher Hinweis.
+- **Importieren:** Startseite → Pfeil-Symbol oben links → Datei in der Dateien-App auswählen (mehrere gleichzeitig möglich).
+- **Updates:** Eine neue Version wird beim Öffnen automatisch geladen. Lerndaten bleiben dabei erhalten.
+
+### Tests
+```
+cd web
+npm test                                   # 52 Unit-Tests (Lernlogik, Import/Export, Speicher, PWA)
+python3 -m http.server 8765 &              # App lokal ausliefern
+node tests/e2e/ui.e2e.mjs http://localhost:8765/ ../screenshots   # Browser-Test mit Playwright
+```
+Beide laufen automatisch bei jedem Push im Workflow `.github/workflows/web.yml`. Die Screenshots
+gibt es dort als Artefakt.
+
+### Veröffentlichung
+`.github/workflows/pages.yml` veröffentlicht `web/` bei jedem Push auf `main` über GitHub Pages –
+aber **nur, wenn das Repository öffentlich ist**. Bei einem privaten Repository wird nichts veröffentlicht.
 
 ---
 
@@ -200,5 +244,9 @@ KarteiKarten/
   Resources/…json              Inhalt des Beispielstapels
   Views/…                      Oberfläche (Stapelliste, Stapel, Lernen, Karte, Editor)
 KarteiKartenTests/             Unit-Tests (Lernlogik, Import/Export, Speichern)
-.github/workflows/ios.yml      Automatischer Build + Tests auf GitHub (macOS)
+.github/workflows/ios.yml      Automatischer Build + Tests der iOS-App (macOS)
+web/                           Web-App (PWA): index.html, js/engine.js (Lernlogik), js/model.js (JSON),
+                               js/store.js (Speicher), js/app.js (Oberfläche), sw.js (offline), tests/
+.github/workflows/web.yml      Tests der Web-App (Unit + Browser)
+.github/workflows/pages.yml    Veröffentlichung der Web-App über GitHub Pages (nur bei öffentlichem Repo)
 ```

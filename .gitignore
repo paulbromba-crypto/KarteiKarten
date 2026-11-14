@@ -5,3 +5,6 @@ build/
 *.xcuserstate
 .DS_Store
 build.log
+node_modules/
+screenshots/
+_site/

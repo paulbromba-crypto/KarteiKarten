@@ -1,0 +1,56 @@
+name: Web-App veröffentlichen (GitHub Pages)
+
+# Veröffentlicht den Ordner /web bei jedem Push auf main.
+# Sicherung: Solange das Repository privat ist, wird NICHTS veröffentlicht
+# (GitHub Pages für private Repositories erfordert einen kostenpflichtigen Plan).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ github.event.repository.private == false }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Unit-Tests
+        working-directory: web
+        run: npm test
+
+      - name: Seite zusammenstellen
+        run: |
+          mkdir -p _site
+          cp -r web/index.html web/sw.js web/manifest.webmanifest web/css web/js web/data web/icons _site/
+          touch _site/.nojekyll
+          # Neue Cache-Version je Commit → Service Worker lädt Updates, Lerndaten bleiben unberührt.
+          sed -i "s/__BUILD__/${GITHUB_SHA::12}/" _site/sw.js
+          grep -q "${GITHUB_SHA::12}" _site/sw.js
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,7 +2,17 @@ name: iOS Build & Tests
 
 on:
   push:
+    paths:
+      - 'KarteiKarten/**'
+      - 'KarteiKartenTests/**'
+      - 'KarteiKarten.xcodeproj/**'
+      - '.github/workflows/ios.yml'
   pull_request:
+    paths:
+      - 'KarteiKarten/**'
+      - 'KarteiKartenTests/**'
+      - 'KarteiKarten.xcodeproj/**'
+      - '.github/workflows/ios.yml'
   workflow_dispatch:
 
 jobs:

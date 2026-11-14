@@ -1,0 +1,52 @@
+name: Web-App Tests
+
+on:
+  push:
+    paths:
+      - 'web/**'
+      - 'KarteiKarten/Resources/**'
+      - '.github/workflows/web.yml'
+  pull_request:
+    paths:
+      - 'web/**'
+      - 'KarteiKarten/Resources/**'
+      - '.github/workflows/web.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Unit-Tests (Lernlogik, Import/Export, Speicher, PWA)
+        run: npm test
+
+      - name: Playwright installieren (nur für den Test, nicht Teil der App)
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Oberflächentest im Browser (iPhone-Viewport, hell + dunkel, offline, Update)
+        run: |
+          mkdir -p ../_site
+          cp -r index.html sw.js manifest.webmanifest css js data icons ../_site/
+          (cd ../_site && python3 -m http.server 8765 --bind 127.0.0.1 >/dev/null 2>&1 &)
+          sleep 1
+          node tests/e2e/ui.e2e.mjs http://localhost:8765/ ../screenshots ../_site
+
+      - name: Screenshots hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots/*.png
+          retention-days: 14

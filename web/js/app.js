@@ -28,6 +28,7 @@ const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (ch) => ({
 const phaseColor = (phase) => `var(--p${Math.min(Math.max(phase, 1), 6)})`;
 const phaseLabel = (phase) => (phase === 6 ? 'Gelernt' : `Phase ${phase}`);
 const pct = (value) => `${Math.round(value)} %`;
+const karten = (n) => `${n} ${n === 1 ? 'Karte' : 'Karten'}`;
 
 const svg = (path, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${path}</svg>`;
 const icon = {
@@ -186,7 +187,7 @@ async function importFiles(fileList) {
   if (results.length) save();
   render();
   if (results.length && !errors.length) {
-    alertDialog('Import erfolgreich', results.map((d) => `„${d.name}“ mit ${d.cards.length} Karten wurde angelegt.`).join('\n'));
+    alertDialog('Import erfolgreich', results.map((d) => `„${d.name}“ mit ${karten(d.cards.length)} wurde angelegt.`).join('\n'));
   } else if (results.length) {
     alertDialog('Import teilweise erfolgreich', `${results.length} Stapel importiert.\n\n${errors.join('\n\n')}`);
   } else {
@@ -227,7 +228,7 @@ function phaseOverview(stats, deckId) {
     const inner = `<span class="label">${phaseLabel(phase)}</span><span class="count">${count}</span>`;
     const style = `style="--phase-color:${phaseColor(phase)}"`;
     if (phase < 6 && count > 0) {
-      return `<button class="phase-tile" ${style} data-action="study" data-deck="${esc(deckId)}" data-phase="${phase}" aria-label="Nur ${phaseLabel(phase)} lernen, ${count} Karten">${inner}</button>`;
+      return `<button class="phase-tile" ${style} data-action="study" data-deck="${esc(deckId)}" data-phase="${phase}" aria-label="Nur ${phaseLabel(phase)} lernen, ${karten(count)}">${inner}</button>`;
     }
     return `<div class="phase-tile" ${style}>${inner}</div>`;
   }).join('');
@@ -254,7 +255,7 @@ function renderDeckList() {
           <div class="grow">
             <div style="font-weight:600">${esc(deck.name)}</div>
             <div class="small muted" style="display:flex;justify-content:space-between;margin:2px 0 8px">
-              <span>${stats.total} Karten</span><span>${pct(stats.progressPercent)} gelernt</span>
+              <span>${karten(stats.total)}</span><span>${pct(stats.progressPercent)} gelernt</span>
             </div>
             <div class="bar" style="height:6px"><span style="width:${stats.progressPercent.toFixed(1)}%"></span></div>
           </div>
@@ -307,7 +308,7 @@ function renderDeck(deck) {
     ${exportBanner()}
     <div class="card-box">
       ${progressBar(stats.progressPercent)}
-      <div class="small muted" style="margin:10px 0 14px">${stats.learned} von ${stats.total} Karten gelernt</div>
+      <div class="small muted" style="margin:10px 0 14px">${stats.learned} von ${karten(stats.total)} gelernt</div>
       <button class="big-btn" data-action="study" data-deck="${esc(deck.id)}" ${stats.total === stats.learned ? 'disabled' : ''}>${icon.play} Lernen starten</button>
     </div>
     <div class="section-title">Übersicht</div>
@@ -363,7 +364,7 @@ function confirmReset(deck, run) {
 function confirmDelete(deck) {
   dialog({
     title: 'Stapel löschen?',
-    message: `„${deck.name}“ mit ${deck.cards.length} Karten und dem Lernfortschritt wird gelöscht.`,
+    message: `„${deck.name}“ mit ${karten(deck.cards.length)} und dem Lernfortschritt wird gelöscht.`,
     confirmLabel: 'Löschen',
     destructive: true,
     onConfirm: () => {

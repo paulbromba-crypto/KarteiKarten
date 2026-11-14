@@ -15,7 +15,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     defaults:
       run:
@@ -32,7 +32,7 @@ jobs:
 
       - name: Playwright installieren (nur für den Test, nicht Teil der App)
         run: |
-          npm install --no-save playwright@1.55.0
+          npm install --no-save playwright@1.63.0
           npx playwright install --with-deps chromium
 
       - name: Oberflächentest im Browser (iPhone-Viewport, hell + dunkel, offline, Update)

@@ -36,7 +36,7 @@ async function newContext(browser, colorScheme) {
   const external = [];
   context.on('request', (req) => {
     const url = new URL(req.url());
-    if (!['localhost', '127.0.0.1'].includes(url.hostname) && !url.protocol.startsWith('blob') && !url.protocol.startsWith('data')) external.push(req.url());
+    if (!['localhost', '127.0.0.1', new URL(BASE).hostname].includes(url.hostname) && !url.protocol.startsWith('blob') && !url.protocol.startsWith('data')) external.push(req.url());
   });
   context.external = external;
   return context;

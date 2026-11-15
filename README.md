@@ -206,6 +206,8 @@ Stapel öffnen → oben rechts **„…“** → **Als JSON exportieren** → Sp
 
 ## Neue Stapel mit Claude erstellen
 
+Fertige Stapel zum Importieren liegen im Ordner [`stapel/`](stapel/), z. B. `Englisch-Vokabeln-B2.json` (42 Karten, 7 mit Übung).
+
 Kopiere diesen Text in den Claude-Chat und passe Thema und Anzahl an:
 
 > Erstelle mir einen Karteikarten-Stapel zum Thema **[THEMA]** mit **[ANZAHL]** Karten als JSON-Datei
